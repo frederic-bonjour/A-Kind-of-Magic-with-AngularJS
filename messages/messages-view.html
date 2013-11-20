@@ -1,0 +1,67 @@
+<div ng-controller="zcMessageController">
+
+	<div class="page-header">
+		<h1><i class="fa fa-comments-o"></i> Messages <small>for {{ user.name }}</small></h1>
+	</div>
+
+	<div class="panel panel-default">
+
+		<div class="panel-heading">
+			<h3 class="panel-title">
+				{{ messages.length | number }} messages &mdash;
+				<span ng-pluralize
+					count="(messages | filter:{'status':'unread'}).length"
+					when="{'0': 'no unread messages.', 'one': 'one unread message.', 'other': '{} unread messages.'}"></span>
+			</h3>
+		</div>
+
+		<table class="table table">
+
+			<tr>
+				<th style="text-align: center;">
+					<a href="javascript:;" ng-click="filter = 'status'; reverse = ! reverse">Status</a>
+					<i class="fa" ng-class="{true: 'fa-sort-asc', false: 'fa-sort-desc'}[reverse]" ng-if="filter == 'status'"></i>
+					<i class="fa fa-sort" ng-if="filter != 'status'"></i>
+				</th>
+				<th>
+					<a href="javascript:;" ng-click="filter = 'sender'; reverse = ! reverse">Sender</a>
+					<i class="fa" ng-class="{true: 'fa-sort-asc', false: 'fa-sort-desc'}[reverse]" ng-if="filter == 'sender'"></i>
+					<i class="fa fa-sort" ng-if="filter != 'sender'"></i>
+				</th>
+				<th>
+					<a href="javascript:;" ng-click="filter = 'subject'; reverse = ! reverse">Subject</a>
+					<i class="fa" ng-class="{true: 'fa-sort-asc', false: 'fa-sort-desc'}[reverse]" ng-if="filter == 'subject'"></i>
+					<i class="fa fa-sort" ng-if="filter != 'subject'"></i>
+				</th>
+				<th>
+					<a href="javascript:;" ng-click="filter = 'date'; reverse = ! reverse">Date</a>
+					<i class="fa" ng-class="{true: 'fa-sort-asc', false: 'fa-sort-desc'}[reverse]" ng-if="filter == 'date'"></i>
+					<i class="fa fa-sort" ng-if="filter != 'date'"></i>
+				</th>
+			</tr>
+
+			<tr ng-repeat="message in messages | orderBy:filter:reverse"
+			    ng-class="{'success': selectedMessage == message, 'active': message.status == 'read'}">
+
+				<td align="center" ng-switch="message.status">
+					<i class="fa fa-circle" ng-switch-when="unread"></i>
+					<i class="fa fa-circle-o" ng-switch-when="read"></i>
+				</td>
+
+				<td ng-bind="message.sender"></td>
+
+				<td><a href="javascript:;" ng-click="select(message)" ng-bind="message.subject"></a></td>
+
+				<td>
+					<time datetime="{{ message.date }}">{{ message.date | date:'medium'}}</time>
+				</td>
+
+			</tr>
+
+		</table>
+
+	</div>
+
+	<div class="zc-message" ng-if="selectedMessage !== null" message="selectedMessage"></div>
+
+</div>

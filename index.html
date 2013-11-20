@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="ZendCon"><!-- ng-app: entry point -->
+<head>
+	<meta charset="utf-8">
+	<title>ZendCon AngularJS</title>
+	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap-theme.min.css"/>
+	<link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="styles.css"/>
+	<script src="lib/jquery-1.10.2.min.js" type="text/javascript"></script>
+	<script src="lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!-- Angular JS scripts inclusion -->
+
+	<script src="lib/angular/angular.min.js" type="text/javascript"></script>
+	<script src="lib/angular/angular-route.min.js" type="text/javascript"></script>
+	<script src="lib/angular/angular-animate.min.js" type="text/javascript"></script>
+	<script src="lib/angular/angular-sanitize.min.js" type="text/javascript"></script>
+
+	<!-- Application's scripts -->
+
+	<script src="app.js" type="text/javascript"></script>
+	<script src="user/user.js" type="text/javascript"></script>
+	<script src="messages/messages.js" type="text/javascript"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="navbar navbar-inverse">
+			<a class="navbar-brand" href="#/home">ZendCon Europe</a>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown" ng-cloak="">
+					<a data-toggle="dropdown" class="dropdown-toggle" href="javascript:;">{{ user.name }} <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#/profile"><i class="fa fa-user"></i> Profile</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<!-- Breadcrumb -->
+
+		<zc-breadcrumb></zc-breadcrumb>
+
+		<div class="row" style="min-height:420px">
+
+			<!-- Left menu -->
+
+			<div class="col-md-3">
+				<ul class="nav nav-pills nav-stacked">
+					<li><a zc-active-route="li" href="#/home"><i class="fa fa-home"></i> Home</a></li>
+					<li><a zc-active-route="li" href="#/profile"><i class="fa fa-user"></i> User profile</a></li>
+					<li><a zc-active-route="li" href="#/messages"><i class="fa fa-comments-o"></i> Messages</a></li>
+				</ul>
+			</div>
+
+			<!-- ng-view: where navigation happens -->
+
+			<div class="col-md-9 fade-container">
+				<div ng-view class="fade-animation"></div>
+			</div>
+		</div>
+
+		<zc-breadcrumb></zc-breadcrumb>
+
+	</div>
+</body>
+</html>

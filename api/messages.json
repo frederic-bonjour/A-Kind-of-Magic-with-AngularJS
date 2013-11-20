@@ -1,0 +1,23 @@
+[
+	{
+		"sender" : "Brian",
+		"subject" : "Where am I?",
+		"date" : "2013-11-17T12:34:53",
+		"body" : "Hey!<br/>Guess where I am?<br/>I'm the kitchen, of course!",
+		"status" : "unread"
+	},
+	{
+		"sender" : "Kevin",
+		"subject" : "ZendCon Europe",
+		"date" : "2013-11-13T08:15:27",
+		"body" : "Will you be there?",
+		"status" : "read"
+	},
+	{
+		"sender" : "John",
+		"subject" : "Do you know AngularJS?",
+		"date" : "2013-11-10T10:47:12",
+		"body" : "This framework is really great, you should have a look at it!<br/>Regards, John.",
+		"status" : "unread"
+	}
+]

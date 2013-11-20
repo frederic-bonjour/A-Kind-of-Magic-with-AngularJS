@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>ZendCon AngularJS example 2</title>
+	<script src="lib/angular/angular.min.js" type="text/javascript"></script>
+</head>
+<body>
+	<select ng-model="company">
+		<option value="">Please select a company...</option>
+		<option value="zend">Zend</option>
+		<option value="google">Google</option>
+		<option value="rbschange">RBS Change</option>
+	</select>
+	<div>
+		<img ng-src="img/{{company}}.png" style="max-height: 50px;"/>
+	</div>
+</body>
+</html>

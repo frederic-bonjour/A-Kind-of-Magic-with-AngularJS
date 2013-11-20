@@ -1,0 +1,55 @@
+[ng-view] .page-header,
+[ng-view] .page-header h1 {
+	margin-top: 0;
+}
+
+blockquote h4 {
+	margin-top: 0;
+}
+
+input.ng-invalid, input.ng-invalid:focus {
+	border-color: #B94A48;
+	outline-color: #B94A48;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(233, 102, 102, 0.6);
+}
+
+[ng-view] {
+	height: 500px;
+}
+
+.fade-container {
+	position: relative;
+}
+
+.fade-animation {
+	position: absolute;
+	top:0;
+	left: 15px;
+	right: 15px;
+}
+
+.fade-animation.ng-enter, .fade-animation.ng-leave {
+	-webkit-transition:0.25s ease-in-out all;
+	-moz-transition:0.25s ease-in-out all;
+	-o-transition:0.25s ease-in-out all;
+	transition:0.25s ease-in-out all;
+}
+
+.fade-animation.ng-enter {
+	z-index: 100;
+	opacity: 0;
+}
+.fade-animation.ng-enter.ng-enter-active {
+	opacity: 1;
+	top: 0px;
+}
+
+.fade-animation.ng-leave {
+	z-index: 101;
+	opacity: 1;
+
+}
+.fade-animation.ng-leave.ng-leave-active {
+	opacity: 0;
+	top: -100px;
+}

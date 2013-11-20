@@ -1,0 +1,19 @@
+<form name="form" ng-submit="submit()">
+
+	<div class="form-group">
+		<label for="name">Name:</label>
+		<input id="name" type="text" name="name" required="required" ng-model="user.name" class="form-control"/>
+		<div class="text-danger" ng-if="form.name.$invalid">Please tell me your name!</div>
+	</div>
+
+	<p>
+		<button type="button" ng-click="reset()" class="btn btn-default" ng-disabled="isUnchanged()">
+			Reset
+		</button>
+		<button class="btn btn-primary" ng-disabled="form.$invalid || isUnchanged()">
+			<i class="fa fa-check"></i>
+			Save
+		</button>
+	</p>
+
+</form>
