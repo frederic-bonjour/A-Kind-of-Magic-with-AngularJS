@@ -3,6 +3,8 @@ A Kind of Magic with AngularJS
 
 This is the demo app I used for my presentation of AngularJS at ZendCon Europe 2013.
 
+Slides are available on [slid.es](http://slid.es/fruityfred/angular-js)
+
 ## Prerequisites
 
 * jQuery 1.10
